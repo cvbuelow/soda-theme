@@ -1,5 +1,331 @@
 [
+    {
+        "class": "tabset_control",
 
+        "layer0.opacity": 1.0,
+        "tint_index": 0,
+
+        //"layer1.texture": "Theme - Default/tabset_background_transparent.png",
+        "layer1.inner_margin": [2, 6],
+        "layer1.opacity": 1.0,
+
+        "content_margin": [3, 0, 3, 1],
+        "tab_overlap": 17,
+        "tab_width": 180,
+        "tab_min_width": 48,
+        "tab_height": 35,
+        "mouse_wheel_switch": false
+    },
+    {
+        "class": "tabset_control",
+        "settings": ["mouse_wheel_switches_tabs"],
+        "mouse_wheel_switch": true
+    },
+    {
+        // Tabset override for light colors
+        "class": "tabset_control",
+        "attributes": ["file_light"],
+        "layer1.texture": "Theme - Default/light_tabset_background_transparent.png"
+    },
+    {
+        // Tabset override for medium-dark colors
+        "class": "tabset_control",
+        "attributes": ["file_medium_dark"],
+        "layer1.opacity": 1.0,
+        "layer1.texture": "Theme - Default/medium_dark_tabset_background_transparent.png"
+    },
+    {
+        // Tabset override for dark colors
+        "class": "tabset_control",
+        "attributes": ["file_dark"],
+        "layer1.opacity": 1.0,
+        "layer1.texture": "Theme - Default/dark_tabset_background_transparent.png"
+    },
+
+    /** Tabs **/
+    {
+        "class": "tab_control",
+
+        "layer0.texture": "Theme - Default/tab_mask_152_gradient2.png",
+        "layer0.inner_margin": [22, 4],
+        "layer0.opacity": 1.0,
+        "tint_index": 0,        // tint layer 0
+        "tint_modifier": [255, 0, 0, 0],
+
+        "layer1.texture": "",
+        "layer1.inner_margin": [22, 4],
+        "layer1.opacity": 0.0,
+
+        "layer2.inner_margin": [22, 4],
+
+        "content_margin": [24, 8, 23, 4],
+        "max_margin_trim": 6,
+        "hit_test_level": 0.4
+    },
+
+    /** Tabs (file color overrides) **/
+    {
+        "class": "tab_control", "attributes": ["file_light"],
+        "layer2.texture": "Theme - Default/light_unselected_tab_bg2.png",
+        "layer2.opacity": 0.7
+    },
+    {
+        "class": "tab_control", "attributes": ["file_medium"],
+        "layer2.texture": "Theme - Default/medium_unselected_tab_bg.png",
+        "layer2.opacity": 0.5
+    },
+    {
+        "class": "tab_control", "attributes": ["file_medium_dark"],
+        "tint_modifier": [255, 255, 255, 24],
+        "layer2.texture": "Theme - Default/medium_dark_unselected_tab_bg2.png",
+        "layer2.opacity": 1.0
+    },
+    {
+        "class": "tab_control", "attributes": ["file_dark"],
+        "tint_modifier": [255, 255, 255, 230],
+        "layer0.texture": "Theme - Default/dark_tab_mask3.png",
+        "layer2.texture": "Theme - Default/dark_unselected_tab_bg2.png",
+        "layer2.opacity": 1.0
+    },
+
+    /** Selected Tabs **/
+    {
+        "class": "tab_control", "attributes": ["selected"],
+        "layer0.texture": "Theme - Default/tab_mask_white.png",
+        "layer1.opacity": 0.0
+    },
+    {
+        "class": "tab_control", "attributes": ["selected", "file_light"],
+        "layer2.texture": "Theme - Default/light_selected_tab_bg.png",
+        "layer2.opacity": 0.8
+    },
+    {
+        "class": "tab_control", "attributes": ["selected", "file_medium"],
+        "layer2.texture": "Theme - Default/medium_selected_tab_bg.png",
+        "layer2.opacity": 0.5
+    },
+    {
+        "class": "tab_control", "attributes": ["selected", "file_medium_dark"],
+        "tint_modifier": [0, 0, 0, 0],
+        "layer2.texture": "Theme - Default/medium_dark_selected_tab_bg.png",
+        "layer2.opacity": 0.7
+    },
+    {
+        "class": "tab_control", "attributes": ["selected", "file_dark"],
+        "tint_modifier": [0, 0, 0, 0],
+        "layer2.texture": "Theme - Default/dark_selected_tab_bg.png",
+        "layer2.opacity": 1,
+        "layer0.opacity": 1.0
+    },
+
+    /** Tab Labels **/
+    {
+        "class": "tab_label",
+        "fg": [0, 0, 0, 255],
+        "shadow_color": [255, 255, 255, 80],
+        "shadow_offset": [0, 1]
+    },
+    {
+        "class": "tab_label",
+        "parents": [{"class": "tab_control", "attributes": ["file_medium"]}],
+        "fg": [255, 255, 255, 180],
+        "shadow_color": [0, 0, 0, 100],
+        "shadow_offset": [0, -1]
+    },
+    {
+        "class": "tab_label",
+        "parents": [{"class": "tab_control", "attributes": ["selected"]}],
+        "fg": [0, 0, 0, 255],
+        "shadow_color": [255, 255, 255, 50],
+        "shadow_offset": [0, 1]
+    },
+    {
+        "class": "tab_label",
+        "parents": [{"class": "tab_control", "attributes": ["selected", "file_medium"]}],
+        "fg": [255, 255, 255, 255],
+        "shadow_color": [0, 0, 0, 100],
+        "shadow_offset": [0, -1]
+    },
+    {
+        "class": "tab_label",
+        "parents": [{"class": "tab_control", "attributes": ["file_medium_dark"]}],
+        "fg": [255, 255, 255, 140],
+        "shadow_color": [0, 0, 0, 100],
+        "shadow_offset": [0, -1]
+    },
+    {
+        "class": "tab_label",
+        "parents": [{"class": "tab_control", "attributes": ["selected", "file_medium_dark"]}],
+        "fg": [255, 255, 255, 230],
+        "shadow_color": [0, 0, 0, 255],
+        "shadow_offset": [0, -1]
+    },
+    {
+        "class": "tab_label",
+        "parents": [{"class": "tab_control", "attributes": ["file_dark"]}],
+        "fg": [255, 255, 255, 160],
+        "shadow_color": [0, 0, 0, 100],
+        "shadow_offset": [0, -1]
+    },
+    {
+        "class": "tab_label",
+        "parents": [{"class": "tab_control", "attributes": ["selected", "file_dark"]}],
+        "fg": [255, 255, 255, 230],
+        "shadow_color": [0, 0, 0, 255],
+        "shadow_offset": [0, -1]
+    },
+
+    {
+        "class": "tab_label",
+        "parents": [{"class": "tab_control", "attributes": ["file_light"]}],
+        "attributes": ["dirty"],
+        "settings": ["highlight_modified_tabs"],
+        "fg": [255, 23, 0]
+    },
+    {
+        "class": "tab_label",
+        "parents": [{"class": "tab_control", "attributes": ["file_medium"]}],
+        "attributes": ["dirty"],
+        "settings": ["highlight_modified_tabs"],
+        "fg": [255, 23, 0]
+    },
+    {
+        "class": "tab_label",
+        "parents": [{"class": "tab_control", "attributes": ["file_medium_dark"]}],
+        "attributes": ["dirty"],
+        "settings": ["highlight_modified_tabs"],
+        "fg": [255, 161, 52]
+    },
+    {
+        "class": "tab_label",
+        "parents": [{"class": "tab_control", "attributes": ["file_dark"]}],
+        "attributes": ["dirty"],
+        "settings": ["highlight_modified_tabs"],
+        "fg": [255, 161, 52]
+    },
+
+    /** Tab Close Buttons **/
+    {
+        "class": "tab_close_button",
+        "content_margin": [0, 0],
+        "layer0.texture": "Theme - Default/grey_x.png",
+        "layer0.opacity": 0.0,
+        "layer0.inner_margin": 0,
+        "layer1.texture": "Theme - Default/dark_x.png",
+        "layer1.opacity": 0.0,
+        "layer2.texture": "Theme - Default/grey_x_light_shadow.png",
+        "layer2.opacity": 1.0,
+        "layer3.texture": "Theme - Default/dark_x_light_shadow.png",
+        "layer3.opacity": 0.0
+    },
+    {
+        "class": "tab_close_button",
+        "settings": ["show_tab_close_buttons"],
+        "content_margin": [8, 8]
+    },
+    {
+        "class": "tab_close_button",
+        "parents": [{"class": "tab_control", "attributes": ["dirty"]}],
+        "layer0.opacity": 0.0,
+        "layer1.opacity": 0.0,
+        "layer2.opacity": 0.0,
+        "layer3.texture": "Theme - Default/dirty_circle.png",
+        "layer3.opacity": 0.5
+    },
+    {
+        "class": "tab_close_button",
+        "attributes": ["selected"],
+        "layer0.opacity": 1.0,
+        "layer1.opacity": 0.0,
+        "layer2.opacity": 0.0,
+        "layer3.opacity": 0.0
+    },
+    {
+        "class": "tab_close_button",
+        "attributes": ["hover"],
+        "layer0.opacity": 0.0,
+        "layer1.opacity": 0.0,
+        "layer2.opacity": 0.0,
+        "layer3.texture": "Theme - Default/dark_x_light_shadow.png",
+        "layer3.opacity": 1.0
+    },
+    {
+        "class": "tab_close_button",
+        "attributes": ["hover", "dirty"],
+        "layer0.opacity": 0.0,
+        "layer1.opacity": 0.0,
+        "layer2.opacity": 0.0,
+        "layer3.texture": "Theme - Default/dirty_circle.png",
+        "layer3.opacity": 1.0
+    },
+    {
+        "class": "tab_close_button",
+        "attributes": ["hover", "selected"],
+        "layer0.opacity": 0.0,
+        "layer1.opacity": 1.0,
+        "layer2.opacity": 0.0,
+        "layer3.opacity": 0.0
+    },
+    {
+        "class": "tab_close_button",
+        "parents": [{"class": "tab_control", "attributes": ["file_medium_dark"]}],
+        "layer3.texture": "Theme - Default/light_x.png",
+        "layer0.opacity": 0.0,
+        "layer1.opacity": 0.0,
+        "layer2.opacity": 0.0,
+        "layer3.opacity": 1.0
+    },
+    {
+        "class": "tab_close_button",
+        "parents": [{"class": "tab_control", "attributes": ["dirty", "file_medium_dark"]}],
+        "layer0.opacity": 0.0,
+        "layer1.opacity": 0.0,
+        "layer2.opacity": 0.0,
+        "layer3.texture": "Theme - Default/dirty_circle_light.png",
+        "layer3.opacity": 0.5
+    },
+    {
+        "class": "tab_close_button",
+        "attributes": ["hover"],
+        "parents": [{"class": "tab_control", "attributes": ["file_medium_dark"]}],
+        "layer3.texture": "Theme - Default/light_x_bright.png",
+        "layer0.opacity": 0.0,
+        "layer1.opacity": 0.0,
+        "layer2.opacity": 0.0,
+        "layer3.opacity": 1.0
+    },
+    {
+        "class": "tab_close_button",
+        "parents": [{"class": "tab_control", "attributes": ["file_dark"]}],
+        "layer3.texture": "Theme - Default/light_x.png",
+        "layer0.opacity": 0.0,
+        "layer1.opacity": 0.0,
+        "layer2.opacity": 0.0,
+        "layer3.opacity": 1.0
+    },
+    {
+        "class": "tab_close_button",
+        "parents": [{"class": "tab_control", "attributes": ["dirty", "file_dark"]}],
+        "layer3.texture": "Theme - Default/light_x.png",
+        "layer0.opacity": 0.0,
+        "layer1.opacity": 0.0,
+        "layer2.opacity": 0.0,
+        "layer3.texture": "Theme - Default/dirty_circle_light.png",
+        "layer3.opacity": 0.5
+    },
+    {
+        "class": "tab_close_button",
+        "attributes": ["hover"],
+        "parents": [{"class": "tab_control", "attributes": ["file_dark"]}],
+        "layer3.texture": "Theme - Default/light_x_bright.png",
+        "layer0.opacity": 0.0,
+        "layer1.opacity": 0.0,
+        "layer2.opacity": 0.0,
+        "layer3.texture": "Theme - Default/light_x.png",
+        "layer3.opacity": 1.0
+    },
+
+/*
 //
 // TABS (REGULAR)
 //
@@ -269,7 +595,7 @@
         "attributes": ["hover"],
         "layer0.texture": "Theme - Soda/Soda Dark/tabset-right-hover.png"
     },
-
+*/
 //
 // FOLD BUTTONS
 //
@@ -553,7 +879,10 @@
     // Sidebar container
     {
         "class": "sidebar_container",
-        "layer0.texture": "Theme - Soda/Soda Dark/sidebar-bg.png",
+        //"layer0.texture": "Theme - Soda/Soda Dark/sidebar-bg.png",
+        //"layer0.tint": [39, 40, 34],
+        //"layer0.tint": [45, 46, 39],
+        "layer0.tint": [23, 23, 20],
         "layer0.opacity": 1.0,
         "layer0.inner_margin": [1, 1, 2, 1],
         "content_margin": [0, 0, 1, 0]
@@ -570,7 +899,8 @@
     // Sidebar rows
     {
         "class": "tree_row",
-        "layer0.texture": "Theme - Soda/Soda Dark/sidebar-row-selected.png",
+        //"layer0.texture": "Theme - Soda/Soda Dark/sidebar-row-selected.png",
+        "layer0.tint": [27, 119, 224],
         "layer0.opacity": 0.0,
         "layer0.inner_margin": [1, 1]
     },
