@@ -879,249 +879,540 @@
         "shadow_offset": [0, -1]
     },
 
-//
-// SIDEBAR
-//
+//========================================================
+//  SIDEBAR
+//--------------------------------------------------------
 
     // Sidebar container
     {
         "class": "sidebar_container",
-        //"layer0.texture": "Theme - Soda/Soda Dark/sidebar-bg.png",
-        //"layer0.tint": [39, 40, 34],
-        //"layer0.tint": [45, 46, 39],
+        "layer0.opacity": 1,
         "layer0.tint": [23, 23, 20],
-        "layer0.opacity": 1.0,
-        "layer0.inner_margin": [1, 1, 2, 1],
-        "content_margin": [0, 0, 1, 0]
+        // "layer0.tint": [16,17,18],
+        "content_margin": [0,5,0,0]
     },
-    // Sidebar tree
+    // Sidebar tree || entries
     {
         "class": "sidebar_tree",
-        "row_padding": [8, 3],
+        "row_padding": [8,4],
+        "indent": 15,
+        "indent_offset": 18,
+        "indent_top_level": true // which make OpenFiles & Folders expandable
+    },
+
+    // options
+    {
+        "class": "sidebar_tree",
+        "settings": ["Seti_sb_small_padding"],
+        "row_padding": [8,3]
+    },
+    {
+        "class": "sidebar_tree",
+        "settings": ["Seti_sb_big_padding"],
+        "row_padding": [8,10]
+    },
+    {
+        "class": "sidebar_tree",
+        "settings": ["Seti_sb_tree_med"],
         "indent": 15,
         "indent_offset": 15,
-        "indent_top_level": false,
-        "dark_content": true
     },
-    // Sidebar rows
+    {
+        "class": "sidebar_tree",
+        "settings": ["Seti_sb_tree_small"],
+        "indent": 15,
+        "indent_offset": 10,
+    },
+    {
+        "class": "sidebar_tree",
+        "settings": ["Seti_sb_tree_tiny"],
+        "indent": 15,
+        "row_padding": [3,7],
+        "indent_offset": 1,
+    },
+    {
+        "class": "sidebar_tree",
+        "settings": ["Seti_sb_tree_miny"],
+        "indent": 12,
+        "row_padding": 5,
+        "indent_offset": 15,
+    },
+
+    // Sidebar rows || selected files bg
     {
         "class": "tree_row",
-        //"layer0.texture": "Theme - Soda/Soda Dark/sidebar-row-selected.png",
+        "layer0.texture": null,
+        // "layer0.tint": [27, 28, 29],
         "layer0.tint": [27, 119, 224],
-        "layer0.opacity": 0.0,
-        "layer0.inner_margin": [1, 1]
+        "layer0.opacity": 0
     },
     // Sidebar row selected
     {
         "class": "tree_row",
         "attributes": ["selected"],
-        "layer0.opacity": 1.0
+        "layer0.opacity": 1
     },
     // Sidebar heading
     {
         "class": "sidebar_heading",
-        "color": [210, 210, 210],
-        "font.bold": true,
-        "shadow_color": [0, 0, 0],
-        "shadow_offset": [0, -1]
+        "color": [55,72,74],
+        "font.bold": true
     },
-    // Sidebar heading selected
     {
         "class": "sidebar_heading",
-        "parents": [{"class": "tree_row", "attributes": ["selected"]}],
-        "shadow_offset": [0, 1]
+        "parents": [{"class": "tree_row","attributes": ["selected"]}]
     },
-    // Sidebar entry
+    {
+        "class": "sidebar_heading",
+        "parents": [{"class": "tree_row","attributes": ["hover"]}],
+        "color": [2,174,255]
+    },
+    // Sidebar files
     {
         "class": "sidebar_label",
-        "color": [125, 125, 125],
-        "shadow_color": [0, 0, 0],
-        "shadow_offset": [0, -1],
-        "font.bold": false,
-        "font.italic": false
-    },
-    // Sidebar folder entry
-    {
-        "class": "sidebar_label",
-        "parents": [{"class": "tree_row", "attributes": ["expandable"]}],
-        "color": [190, 190, 190]
+        "color": [170,170,170]
     },
     {
         "class": "sidebar_label",
-        "parents": [{"class": "tree_row", "attributes": ["expandable", "hover"]}],
-        "color": [235, 235, 235]
+        "parents": [{"class": "tree_row","attributes": ["hover"]}],
+        "color": [255,255,255]
+    },
+    // Sidebar folder
+    {
+        "class": "sidebar_label",
+        "parents": [{"class": "tree_row","attributes": ["expandable"]}],
+        "color": [80,105,108],
+        "font.bold": false
     },
     {
         "class": "sidebar_label",
-        "parents": [{"class": "tree_row", "attributes": ["expandable"]}],
+        "parents": [{"class": "tree_row","attributes": ["expandable"]}],
         "settings": ["bold_folder_labels"],
         "font.bold": true
     },
-    // Sidebar entry selected
     {
         "class": "sidebar_label",
-        "parents": [{"class": "tree_row", "attributes": ["selected"]}],
-        "color": [210, 210, 210],
-        "shadow_color": [0, 0, 0],
-        "shadow_offset": [0, 1]
+        "parents": [{"class": "tree_row","attributes": ["expandable","hover"]}],
+        "color": [124,159,174]
     },
-    // Sidebar entry transient
+    // Sidebar open files entry selected
     {
         "class": "sidebar_label",
-        "attributes": ["transient"],
-        "font.italic": true
+        "parents": [{"class": "tree_row","attributes": ["selected"]}],
+        "color": [255,255,255]
     },
 
-//
-// SIDEBAR - OPEN FILE ICONS
-//
+//========================================================
+//  SIDEBAR - OPEN FILE ICONS
+//--------------------------------------------------------
 
     // Sidebar file close
     {
         "class": "close_button",
-        "layer0.texture": "Theme - Soda/Soda Dark/file-close.png",
-        "layer0.opacity": 0.0,
+        "layer0.texture": "Theme - Soda/Main/light_x_hover.png",
+        "layer0.opacity": 1,
         "layer0.inner_margin": 0,
-        "content_margin": [8, 8]
+        "content_margin": 8
     },
     {
         "class": "close_button",
-        "parents": [{"class": "tree_row", "attributes": ["hover"]}],
-        "layer0.opacity": 1.0
+        "parents": [{"class": "tree_row","attributes": ["hover"]}],
+        "layer0.opacity": 1
     },
     // Sidebar file dirty
     {
         "class": "close_button",
         "attributes": ["dirty"],
-        "layer0.texture": "Theme - Soda/Soda Dark/file-dirty.png",
-        "layer0.opacity": 1.0
+        "layer0.texture": "Theme - Soda/Main/dirty_circle.png",
+        "layer0.opacity": 1
     },
     {
         "class": "close_button",
         "attributes": ["dirty"],
-        "parents": [{"class": "tree_row", "attributes": ["selected"]}],
-        "layer0.texture": "Theme - Soda/Soda Dark/file-dirty-selected.png"
+        "parents": [{"class": "tree_row","attributes": ["selected"]}],
+        "layer0.texture": "Theme - Soda/Main/dirty_circle.png"
     },
     {
         "class": "close_button",
         "attributes": ["dirty"],
-        "parents": [{"class": "tree_row", "attributes": ["hover"]}],
-        "layer0.texture": "Theme - Soda/Soda Dark/file-close.png"
+        "parents": [{"class": "tree_row","attributes": ["hover"]}],
+        "layer0.texture": "Theme - Soda/Main/dirty_circle.png",
+        "layer0.opacity": 1
     },
     // Sidebar file close hover
     {
         "class": "close_button",
         "attributes": ["hover"],
-        "layer0.texture": "Theme - Soda/Soda Dark/file-close-hover.png"
+        "layer0.texture": "Theme - Soda/Main/light_x_hover.png"
     },
     {
         "class": "close_button",
-        "parents": [{"class": "tree_row", "attributes": ["hover", "selected"]}],
-        "layer0.texture": "Theme - Soda/Soda Dark/file-close-selected.png"
+        "parents": [{"class": "tree_row","attributes": ["hover","selected"]}],
+        "layer0.texture": "Theme - Soda/Main/light_x_hover.png",
+        "layer0.opacity": 1
     },
 
-//
-// SIDEBAR - GENERAL FILE ICONS
-//
+//========================================================
+//  SIDEBAR - GENERAL FILE ICONS
+//--------------------------------------------------------
 
     // Sidebar group closed
-    {
+     {
         "class": "disclosure_button_control",
-        "content_margin": [8, 8],
-        "layer0.texture": "Theme - Soda/Soda Dark/group-closed.png",
-        "layer0.opacity": 1.0,
-        "layer0.inner_margin": 0
-    },
-    {
-        "class": "disclosure_button_control",
-        "parents": [{"class": "tree_row", "attributes": ["hover"]}],
-        "layer0.texture": "Theme - Soda/Soda Dark/group-closed-hover.png"
-    },
-    {
-        "class": "disclosure_button_control",
-        "parents": [{"class": "tree_row", "attributes": ["selected"]}],
-        "layer0.texture": "Theme - Soda/Soda Dark/group-closed-selected.png"
+        "content_margin": 8,
+        "layer0.texture": "Theme - Soda/Main/group-closed@2x.png",
+        "layer0.inner_margin": 0,
+        "layer0.tint": [200, 200, 200],
+        "layer0.opacity": 1
     },
     // Sidebar group open
     {
         "class": "disclosure_button_control",
         "attributes": ["expanded"],
-        "layer0.texture": "Theme - Soda/Soda Dark/group-open.png"
+        "layer0.texture": "Theme - Soda/Main/group-open@2x.png"
     },
+    // options
     {
         "class": "disclosure_button_control",
-        "attributes": ["expanded"],
-        "parents": [{"class": "tree_row", "attributes": ["hover"]}],
-        "layer0.texture": "Theme - Soda/Soda Dark/group-open-hover.png"
+        "settings": ["Seti_sb_wild"],
+        "layer0.opacity": 0 // hide sidebar arrows
     },
     {
-        "class": "disclosure_button_control",
-        "attributes": ["expanded"],
-        "parents": [{"class": "tree_row", "attributes": ["selected"]}],
-        "layer0.texture": "Theme - Soda/Soda Dark/group-open-selected.png"
+        "class": "sidebar_tree",
+        "settings": ["Seti_sb_wild"],
+        "indent": 15,
+        "row_padding": [3,6],
+        "indent_offset": 2,
     },
+    {
+        "class": "sidebar_container",
+        "settings": ["Seti_sb_wild"],
+        "content_margin": [0,7,0,0]
+    },
+
     // Sidebar folder closed
     {
         "class": "icon_folder",
-        "layer0.texture": "Theme - Soda/Soda Dark/folder-closed.png",
-        "layer0.opacity": 1.0,
-        "content_margin": [8, 8]
+        "layer0.texture": "Theme - Soda/Main/folder@2x.png",
+        "layer0.opacity": 1,
+        "layer0.inner_margin": 0,
+        "content_margin": [7,0]
+    },
+    // Sidebar folder opened
+    {
+        "class": "icon_folder",
+        "parents": [{ "class": "tree_row", "attributes": ["expanded"]}],
+        "layer0.texture": "Theme - Soda/Main/folder_open@2x.png",
+        // "layer0.inner_margin": -5,
+        "layer0.opacity": 1,
+        "content_margin": [7,0],
+    },
+    // Options
+    {
+        "class": "icon_folder",
+        "settings": ["Seti_ClosedFolder_same"],
+        "layer0.texture": "Theme - Soda/Main/folder_open@2x.png",
+        "layer0.opacity": 0.5,
     },
     {
         "class": "icon_folder",
-        "parents": [{"class": "tree_row", "attributes": ["hover"]}],
-        "layer0.texture": "Theme - Soda/Soda Dark/folder-closed-hover.png"
+        "settings": ["Seti_ClosedFolder_dots"],
+        "layer0.texture": "Theme - Soda/Main/xyz/folder-dots@2x.png",
     },
     {
         "class": "icon_folder",
-        "parents": [{"class": "tree_row", "attributes": ["selected"]}],
-        "layer0.texture": "Theme - Soda/Soda Dark/folder-closed-selected.png"
+        "settings": ["Seti_ClosedFolder_remove"],
+        "content_margin": 0
     },
-    // Sidebar folder open
-    {
-        "class": "icon_folder",
-        "parents": [{"class": "tree_row", "attributes": ["expanded"]}],
-        "layer0.texture": "Theme - Soda/Soda Dark/folder-open.png"
-    },
-    {
-        "class": "icon_folder",
-        "parents": [{"class": "tree_row", "attributes": ["expanded", "hover"]}],
-        "layer0.texture": "Theme - Soda/Soda Dark/folder-open-hover.png"
-    },
-    {
-        "class": "icon_folder",
-        "parents": [{"class": "tree_row", "attributes": ["expanded", "selected"]}],
-        "layer0.texture": "Theme - Soda/Soda Dark/folder-open-selected.png"
-    },
-    // Sidebar folder loading
+
+    // Icon folder loading
     {
         "class": "icon_folder_loading",
         "layer0.texture":
         {
             "keyframes":
             [
-                "Theme - Soda/Soda Dark/spinner/spinner7.png",
-                "Theme - Soda/Soda Dark/spinner/spinner6.png",
-                "Theme - Soda/Soda Dark/spinner/spinner5.png",
-                "Theme - Soda/Soda Dark/spinner/spinner4.png",
-                "Theme - Soda/Soda Dark/spinner/spinner3.png",
-                "Theme - Soda/Soda Dark/spinner/spinner2.png",
-                "Theme - Soda/Soda Dark/spinner/spinner1.png",
-                "Theme - Soda/Soda Dark/spinner/spinner.png"
+                "Theme - Soda/Main/spinner7.png",
+                "Theme - Soda/Main/spinner6.png",
+                "Theme - Soda/Main/spinner5.png",
+                "Theme - Soda/Main/spinner4.png",
+                "Theme - Soda/Main/spinner3.png",
+                "Theme - Soda/Main/spinner2.png",
+                "Theme - Soda/Main/spinner1.png",
+                "Theme - Soda/Main/spinner.png"
             ],
             "loop": true,
-            "frame_time": 0.075,
+            "frame_time": 0.075
         },
-        "layer0.opacity": 1.0,
-        "content_margin": [8, 8]
+        "layer0.opacity": 1,
+        "content_margin": 8
     },
-    // Sidebar file icons
+
+    // remove all sidebar icons
     {
-        "class": "icon_file_type",
-        // layer0.texture is filled in by code with the relevant icon name
-        "layer0.opacity": 1.0,
-        "content_margin": [8, 8]
+       "class": "icon_file_type",
+       "settings": ["Seti_sb_no_icons"],
+       "content_margin": 0
     },
+    {
+       "class": "icon_file_type",
+       "settings": ["Seti_sb_blank"],
+       "content_margin": 0
+    },
+    {
+       "class": "icon_folder",
+       "settings": ["Seti_sb_blank"],
+       "content_margin": 0
+    },
+    {
+       "class": "icon_folder_loading",
+       "settings": ["Seti_sb_blank"],
+       "content_margin": 0
+    },
+
+// //
+// // SIDEBAR
+// //
+
+//     // Sidebar container
+//     {
+//         "class": "sidebar_container",
+//         //"layer0.texture": "Theme - Soda/Soda Dark/sidebar-bg.png",
+//         //"layer0.tint": [39, 40, 34],
+//         //"layer0.tint": [45, 46, 39],
+//         "layer0.tint": [23, 23, 20],
+//         "layer0.opacity": 1.0,
+//         "layer0.inner_margin": [1, 1, 2, 1],
+//         "content_margin": [0, 0, 1, 0]
+//     },
+//     // Sidebar tree
+//     {
+//         "class": "sidebar_tree",
+//         "row_padding": [8, 3],
+//         "indent": 15,
+//         "indent_offset": 15,
+//         "indent_top_level": false,
+//         "dark_content": true
+//     },
+//     // Sidebar rows
+//     {
+//         "class": "tree_row",
+//         //"layer0.texture": "Theme - Soda/Soda Dark/sidebar-row-selected.png",
+//         "layer0.tint": [27, 119, 224],
+//         "layer0.opacity": 0.0,
+//         "layer0.inner_margin": [1, 1]
+//     },
+//     // Sidebar row selected
+//     {
+//         "class": "tree_row",
+//         "attributes": ["selected"],
+//         "layer0.opacity": 1.0
+//     },
+//     // Sidebar heading
+//     {
+//         "class": "sidebar_heading",
+//         "color": [210, 210, 210],
+//         "font.bold": true,
+//         "shadow_color": [0, 0, 0],
+//         "shadow_offset": [0, -1]
+//     },
+//     // Sidebar heading selected
+//     {
+//         "class": "sidebar_heading",
+//         "parents": [{"class": "tree_row", "attributes": ["selected"]}],
+//         "shadow_offset": [0, 1]
+//     },
+//     // Sidebar entry
+//     {
+//         "class": "sidebar_label",
+//         "color": [125, 125, 125],
+//         "shadow_color": [0, 0, 0],
+//         "shadow_offset": [0, -1],
+//         "font.bold": false,
+//         "font.italic": false
+//     },
+//     // Sidebar folder entry
+//     {
+//         "class": "sidebar_label",
+//         "parents": [{"class": "tree_row", "attributes": ["expandable"]}],
+//         "color": [190, 190, 190]
+//     },
+//     {
+//         "class": "sidebar_label",
+//         "parents": [{"class": "tree_row", "attributes": ["expandable", "hover"]}],
+//         "color": [235, 235, 235]
+//     },
+//     {
+//         "class": "sidebar_label",
+//         "parents": [{"class": "tree_row", "attributes": ["expandable"]}],
+//         "settings": ["bold_folder_labels"],
+//         "font.bold": true
+//     },
+//     // Sidebar entry selected
+//     {
+//         "class": "sidebar_label",
+//         "parents": [{"class": "tree_row", "attributes": ["selected"]}],
+//         "color": [210, 210, 210],
+//         "shadow_color": [0, 0, 0],
+//         "shadow_offset": [0, 1]
+//     },
+//     // Sidebar entry transient
+//     {
+//         "class": "sidebar_label",
+//         "attributes": ["transient"],
+//         "font.italic": true
+//     },
+
+// //
+// // SIDEBAR - OPEN FILE ICONS
+// //
+
+//     // Sidebar file close
+//     {
+//         "class": "close_button",
+//         "layer0.texture": "Theme - Soda/Soda Dark/file-close.png",
+//         "layer0.opacity": 0.0,
+//         "layer0.inner_margin": 0,
+//         "content_margin": [8, 8]
+//     },
+//     {
+//         "class": "close_button",
+//         "parents": [{"class": "tree_row", "attributes": ["hover"]}],
+//         "layer0.opacity": 1.0
+//     },
+//     // Sidebar file dirty
+//     {
+//         "class": "close_button",
+//         "attributes": ["dirty"],
+//         "layer0.texture": "Theme - Soda/Soda Dark/file-dirty.png",
+//         "layer0.opacity": 1.0
+//     },
+//     {
+//         "class": "close_button",
+//         "attributes": ["dirty"],
+//         "parents": [{"class": "tree_row", "attributes": ["selected"]}],
+//         "layer0.texture": "Theme - Soda/Soda Dark/file-dirty-selected.png"
+//     },
+//     {
+//         "class": "close_button",
+//         "attributes": ["dirty"],
+//         "parents": [{"class": "tree_row", "attributes": ["hover"]}],
+//         "layer0.texture": "Theme - Soda/Soda Dark/file-close.png"
+//     },
+//     // Sidebar file close hover
+//     {
+//         "class": "close_button",
+//         "attributes": ["hover"],
+//         "layer0.texture": "Theme - Soda/Soda Dark/file-close-hover.png"
+//     },
+//     {
+//         "class": "close_button",
+//         "parents": [{"class": "tree_row", "attributes": ["hover", "selected"]}],
+//         "layer0.texture": "Theme - Soda/Soda Dark/file-close-selected.png"
+//     },
+
+// //
+// // SIDEBAR - GENERAL FILE ICONS
+// //
+
+//     // Sidebar group closed
+//     {
+//         "class": "disclosure_button_control",
+//         "content_margin": [8, 8],
+//         "layer0.texture": "Theme - Soda/Soda Dark/group-closed.png",
+//         "layer0.opacity": 1.0,
+//         "layer0.inner_margin": 0
+//     },
+//     {
+//         "class": "disclosure_button_control",
+//         "parents": [{"class": "tree_row", "attributes": ["hover"]}],
+//         "layer0.texture": "Theme - Soda/Soda Dark/group-closed-hover.png"
+//     },
+//     {
+//         "class": "disclosure_button_control",
+//         "parents": [{"class": "tree_row", "attributes": ["selected"]}],
+//         "layer0.texture": "Theme - Soda/Soda Dark/group-closed-selected.png"
+//     },
+//     // Sidebar group open
+//     {
+//         "class": "disclosure_button_control",
+//         "attributes": ["expanded"],
+//         "layer0.texture": "Theme - Soda/Soda Dark/group-open.png"
+//     },
+//     {
+//         "class": "disclosure_button_control",
+//         "attributes": ["expanded"],
+//         "parents": [{"class": "tree_row", "attributes": ["hover"]}],
+//         "layer0.texture": "Theme - Soda/Soda Dark/group-open-hover.png"
+//     },
+//     {
+//         "class": "disclosure_button_control",
+//         "attributes": ["expanded"],
+//         "parents": [{"class": "tree_row", "attributes": ["selected"]}],
+//         "layer0.texture": "Theme - Soda/Soda Dark/group-open-selected.png"
+//     },
+//     // Sidebar folder closed
+//     {
+//         "class": "icon_folder",
+//         "layer0.texture": "Theme - Soda/Soda Dark/folder-closed.png",
+//         "layer0.opacity": 1.0,
+//         "content_margin": [8, 8]
+//     },
+//     {
+//         "class": "icon_folder",
+//         "parents": [{"class": "tree_row", "attributes": ["hover"]}],
+//         "layer0.texture": "Theme - Soda/Soda Dark/folder-closed-hover.png"
+//     },
+//     {
+//         "class": "icon_folder",
+//         "parents": [{"class": "tree_row", "attributes": ["selected"]}],
+//         "layer0.texture": "Theme - Soda/Soda Dark/folder-closed-selected.png"
+//     },
+//     // Sidebar folder open
+//     {
+//         "class": "icon_folder",
+//         "parents": [{"class": "tree_row", "attributes": ["expanded"]}],
+//         "layer0.texture": "Theme - Soda/Soda Dark/folder-open.png"
+//     },
+//     {
+//         "class": "icon_folder",
+//         "parents": [{"class": "tree_row", "attributes": ["expanded", "hover"]}],
+//         "layer0.texture": "Theme - Soda/Soda Dark/folder-open-hover.png"
+//     },
+//     {
+//         "class": "icon_folder",
+//         "parents": [{"class": "tree_row", "attributes": ["expanded", "selected"]}],
+//         "layer0.texture": "Theme - Soda/Soda Dark/folder-open-selected.png"
+//     },
+//     // Sidebar folder loading
+//     {
+//         "class": "icon_folder_loading",
+//         "layer0.texture":
+//         {
+//             "keyframes":
+//             [
+//                 "Theme - Soda/Soda Dark/spinner/spinner7.png",
+//                 "Theme - Soda/Soda Dark/spinner/spinner6.png",
+//                 "Theme - Soda/Soda Dark/spinner/spinner5.png",
+//                 "Theme - Soda/Soda Dark/spinner/spinner4.png",
+//                 "Theme - Soda/Soda Dark/spinner/spinner3.png",
+//                 "Theme - Soda/Soda Dark/spinner/spinner2.png",
+//                 "Theme - Soda/Soda Dark/spinner/spinner1.png",
+//                 "Theme - Soda/Soda Dark/spinner/spinner.png"
+//             ],
+//             "loop": true,
+//             "frame_time": 0.075,
+//         },
+//         "layer0.opacity": 1.0,
+//         "content_margin": [8, 8]
+//     },
+//     // Sidebar file icons
+//     {
+//         "class": "icon_file_type",
+//         // layer0.texture is filled in by code with the relevant icon name
+//         "layer0.opacity": 1.0,
+//         "content_margin": [8, 8]
+//     },
 
 //
 // STANDARD TEXT BUTTONS
